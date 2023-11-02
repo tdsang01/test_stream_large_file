@@ -13,7 +13,7 @@ stream._write = (chunk, encoding, done) => {
     done();
 };
 
-const jsonStringifyStream = JSONStream.stringify();
+const jsonStringifyStream = JSONStream.stringify('', undefined, '');
 jsonStringifyStream.pipe(stream);
 jsonStringifyStream.write(largeJsonObject);
 jsonStringifyStream.end();
